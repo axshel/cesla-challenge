@@ -1,0 +1,15 @@
+{
+  "name": "cypress-api-test-cesla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.13.0"
+  }
+}
