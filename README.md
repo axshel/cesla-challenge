@@ -1,5 +1,6 @@
 ## CESLA challenge
 
+- All required documentation can be seen at "Documentation" folder.
 - Automation for https://github.com/zanelladev/challenge-developer-flutter project mocked API.
 
 ### Project structure
