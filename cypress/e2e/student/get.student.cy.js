@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('GET students feature', () => {
+describe('Students endpoint: GET method', () => {
 
     it('Get a list of students', () => {
 
@@ -34,14 +34,10 @@ describe('GET students feature', () => {
             expect(response.body[0].academic_record).string
         })
     })
-})
-
-
-describe('GET student', () => {
 
     it('Get a specific student', () => {
 
-        const student_id = '3'
+        const student_id = 3
 
         cy.request({
             method: 'GET',

@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('POST login feature', () => {
+describe('Login endpoint: POST method', () => {
 
     it('Crate a new login register', () => {
 
@@ -18,8 +18,6 @@ describe('POST login feature', () => {
 
         // Validations
         cy.get('@postLoginResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(201)
             expect(response.body.id).not.empty
             expect(response.body.token).not.empty

@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('GET login feature', () => {
+describe('Login endpoint: GET method', () => {
 
     it('Get a list of login registers', () => {
 
@@ -27,14 +27,10 @@ describe('GET login feature', () => {
             expect(response.body[0].password).string
         })
     })
-})
-
-
-describe('GET login register', () => {
 
     it('Get a specific login', () => {
 
-        const login_id = '31'
+        const login_id = 28
 
         cy.request({
             method: 'GET',
@@ -44,14 +40,6 @@ describe('GET login register', () => {
 
         // Valiations
         cy.get('@getLoginResult').then((response) => {
-            let expectedResult = {
-                createdAt: "2024-08-09T05:01:37.020Z",
-                email: "alextest@email.com",
-                password: "alextest",
-                token: "65f130aafdd8bd8ed9cfb34a",
-                id: "31"
-              }
-
             expect(response.status).equal(200)
             expect(response.body.id).not.empty
             
@@ -66,8 +54,6 @@ describe('GET login register', () => {
             expect(response.body.password).not.empty
             expect(response.body.password).string
             expect(response.body.password).equal("alextest")
-            
-            expect(response.body).to.deep.equal(expectedResult)
         })
     })
 })

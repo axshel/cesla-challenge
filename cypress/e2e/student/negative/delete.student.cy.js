@@ -1,10 +1,10 @@
 /// <reference types="cypress"/>
 
-describe('DELETE student feature failure test: deleting a non-existing record', () => {
+describe('Student endpoint: DELETE method negative tests', () => {
 
     it('Fail to delete a non-existing student register', () => {
         // Creates a new register to be deleted
-        const non_existing_id = '0'
+        const non_existing_id = 0
 
         cy.request({
             method: 'DELETE',
@@ -15,7 +15,6 @@ describe('DELETE student feature failure test: deleting a non-existing record', 
         // Validations
         cy.get('@deleteStudentResult').then((response_del) => {
             expect(response_del.status).equal(404)
-            console.log(response_del.body)
         })
     })
 })

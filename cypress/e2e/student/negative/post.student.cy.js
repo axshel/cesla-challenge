@@ -1,6 +1,75 @@
 /// <reference types="cypress"/>
 
-describe('POST student feature failure test: missing or empty required parameter #name', () => {
+describe('Student endpoint: POST method negative tests', () => {
+    it('Fail to update a student register: acedemic_register not editable', () => {
+        const body = {
+            "name": "Alex Test updated",
+            "email": "alextest@email.com updated",
+            "birthdate": "1980-01-02",
+            "academic_record": "12345",
+            "cpf": "00271700040"
+        }
+
+        const student_id = '31';
+        cy.request({
+            method: 'POST',
+            url: `https://653c0826d5d6790f5ec7c664.mockapi.io/api/v1/student/${student_id}`,
+            failOnStatusCode: false,
+            body: body        
+        }).as('postStudentResult')
+
+        // Validations
+        cy.get('@postStudentResult').then((response) => {
+            expect(response.status).equal(400)
+        })
+    })
+
+    it('Fail to update a student register: cpf not editable', () => {
+        const body = {
+            "name": "Alex Test updated",
+            "email": "alextest@email.com updated",
+            "birthdate": "1980-01-02",
+            "academic_record": "1234",
+            "cpf": "00271700041"
+        }
+
+        const student_id = '31';
+        cy.request({
+            method: 'POST',
+            url: `https://653c0826d5d6790f5ec7c664.mockapi.io/api/v1/student/${student_id}`,
+            failOnStatusCode: false,
+            body: body        
+        }).as('postStudentResult')
+
+        // Validations
+        cy.get('@postStudentResult').then((response) => {
+            expect(response.status).equal(400)
+        })
+    })
+
+    it('Fail to create a new student register - already existing academic_register', () => {
+
+        const body = {
+            "name": "Alex Test 2",
+            "email": "alextest2@email.com",
+            "birthdate": "1980-01-01",
+            "academic_record": "1234",
+            "cpf": "00271700040"
+        }
+
+       cy.request({
+            method: 'POST',
+            url: 'https://653c0826d5d6790f5ec7c664.mockapi.io/api/v1/student',
+            failOnStatusCode: false,
+            body: body        
+        }).as('postStudentResult')
+
+        // Validations
+        cy.get('@postStudentResult').then((response) => {
+            expect(response.status).equal(400)
+        })
+    })
+
     /* ** NOTE **
     * It's allowing to post the prototype required parameter with an empty data, instead returning 422 (Unprocessable Entity)
     * Using skip to not fail the test due to previous considerations.
@@ -24,8 +93,6 @@ describe('POST student feature failure test: missing or empty required parameter
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -53,8 +120,6 @@ describe('POST student feature failure test: missing or empty required parameter
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -84,8 +149,6 @@ describe('POST student feature failure: missing or empty required parameter #ema
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -113,8 +176,6 @@ describe('POST student feature failure: missing or empty required parameter #ema
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -144,8 +205,6 @@ describe('POST student feature failure: missing or empty required parameter #aca
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -173,8 +232,6 @@ describe('POST student feature failure: missing or empty required parameter #aca
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -206,8 +263,6 @@ describe('POST student feature failure: missing or empty required parameter #cpf
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })
@@ -235,8 +290,6 @@ describe('POST student feature failure: missing or empty required parameter #cpf
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(422)
         })
     })

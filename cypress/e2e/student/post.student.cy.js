@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('POST student feature', () => {
+describe('Student endpoint: POST method', () => {
 
     it('Crate a new student register successfully', () => {
 
@@ -21,8 +21,6 @@ describe('POST student feature', () => {
 
         // Validations
         cy.get('@postStudentResult').then((response) => {
-            
-            console.log(response)
             expect(response.status).equal(201)
             expect(response.body.id).not.empty
             expect(response.body.createdAt).not.empty

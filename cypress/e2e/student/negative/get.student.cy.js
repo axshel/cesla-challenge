@@ -1,9 +1,9 @@
 /// <reference types="cypress"/>
 
-describe('GET students feature failure test: getting a non-existing record', () => {
+describe('Students endpoint: GET method negative tests', () => {
     it('Fail to get a non-existing student', () => {
 
-        const student_id = '0'
+        const student_id = 0
 
         cy.request({
             method: 'GET',
