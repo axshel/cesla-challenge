@@ -1,6 +1,6 @@
 ## CESLA challenge
 
-- Automation for https://github.com/zanelladev/challenge-developer-flutter?tab=readme-ov-file project mocked API.
+- Automation for https://github.com/zanelladev/challenge-developer-flutter project mocked API.
 
 ### Project structure
 
