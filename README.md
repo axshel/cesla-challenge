@@ -10,8 +10,8 @@
 
 ### How to test
 
-** Required installations before running the commands:
-  - Node.js
+- Required installations before running the commands:
+  Node.js
 
 - Install Cypress running the following command:
   npm install cypress [--force] (use --force in case of having Cypress already installed in other project)
