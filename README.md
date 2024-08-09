@@ -5,7 +5,7 @@
 ### Project structure
 
 - This is a Cypress automation project for API, that is structured by features and splited in negative and positive test cases
-- The negative test cases for POST Students endpoint are skipped due to this mocked data: when sendding blank data or missing data as a required parameter, the API accept
+- Some negative test cases for POST Students endpoint are skipped due to this mocked data: when sendding blank data or missing data as a required parameter, the API accept
   empty data and mocks if missing parameter, with some random information
 
 ### How to test
