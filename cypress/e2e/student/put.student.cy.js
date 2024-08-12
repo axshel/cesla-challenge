@@ -20,7 +20,7 @@ describe('Student endpoint: PUT method', () => {
             "cpf": "00271700040"
         }
 
-        const student_id = 31;
+        const student_id = 3;
         cy.request({
             method: 'PUT',
             url: `https://653c0826d5d6790f5ec7c664.mockapi.io/api/v1/student/${student_id}`,

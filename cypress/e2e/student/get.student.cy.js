@@ -47,31 +47,39 @@ describe('Students endpoint: GET method', () => {
 
         //Valiations
         cy.get('@getStudentResult').then((response) => {
-            let expectedResult = {createdAt:"2024-04-25T17:16:32.989Z",name:"Fernanda",birthdate:"2024-05-08T00:00:00.000",cpf:"001.511.544-57",email:"fer@root.com",academic_record:"5678",id:"3"}
+            let expectedResult = {
+                "createdAt": "2024-08-11T14:21:12.722Z",
+                "name": "Alex Test",
+                "birthdate": "1980-01-01",
+                "cpf": "00271700040",
+                "email": "alextest@email.com",
+                "academic_record": "1234",
+                "id": "3"
+            }
 
             expect(response.status).equal(200)
             expect(response.body.id).not.empty
             expect(response.body.createdAt).not.empty
 
             expect(response.body.name).string
-            expect(response.body.name).equal('Fernanda')
+            expect(response.body.name).equal('Alex Test')
 
             expect(response.body.birthdate).not.empty
             let birthDate = new Date(response.body.birthdate.toString())
             expect(birthDate.toISOString().split('T')[0]).string;
-            expect(birthDate.toISOString().split('T')[0]).equal("2024-05-08")
+            expect(birthDate.toISOString().split('T')[0]).equal("1980-01-01")
 
             expect(response.body.cpf).not.empty
             expect(response.body.cpf).string
-            expect(response.body.cpf).equal("001.511.544-57")
+            expect(response.body.cpf).equal("00271700040")
 
             expect(response.body.email).not.empty
             expect(response.body.email).string
-            expect(response.body.email).equal("fer@root.com")
+            expect(response.body.email).equal("alextest@email.com")
 
             expect(response.body.academic_record).not.empty
             expect(response.body.academic_record).string
-            expect(response.body.academic_record).equal("5678")
+            expect(response.body.academic_record).equal("1234")
 
             expect(response.body).to.deep.equal(expectedResult)
         })
