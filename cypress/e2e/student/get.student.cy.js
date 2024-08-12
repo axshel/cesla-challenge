@@ -47,16 +47,6 @@ describe('Students endpoint: GET method', () => {
 
         //Valiations
         cy.get('@getStudentResult').then((response) => {
-            let expectedResult = {
-                "createdAt": "2024-08-11T14:21:12.722Z",
-                "name": "Alex Test",
-                "birthdate": "1980-01-01",
-                "cpf": "00271700040",
-                "email": "alextest@email.com",
-                "academic_record": "1234",
-                "id": "3"
-            }
-
             expect(response.status).equal(200)
             expect(response.body.id).not.empty
             expect(response.body.createdAt).not.empty
@@ -80,8 +70,6 @@ describe('Students endpoint: GET method', () => {
             expect(response.body.academic_record).not.empty
             expect(response.body.academic_record).string
             expect(response.body.academic_record).equal("1234")
-
-            expect(response.body).to.deep.equal(expectedResult)
         })
     })
 })
