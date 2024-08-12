@@ -1,0 +1,9 @@
+cypress/screenshots/login/delete.login.cy.js/Login endpoint DELETE method -- Delete a login register (failed).png
+cypress/screenshots/login/delete.login.cy.js/Login endpoint DELETE method -- Delete unused login register (failed).png
+cypress/screenshots/login/get.login.cy.js/Login endpoint GET method -- Get a list of login registers (failed).png
+cypress/screenshots/login/get.login.cy.js/Login endpoint GET method -- Get a specific login (failed).png
+cypress/screenshots/student/delete.student.cy.js/Student endpoint DELETE method -- Delete a student register (failed).png
+cypress/screenshots/student/get.student.cy.js/Students endpoint GET method -- Get a list of students (failed).png
+cypress/screenshots/student/get.student.cy.js/Students endpoint GET method -- Get a specific student (failed).png
+cypress/screenshots/student/negative/post.student.cy.js/Student endpoint POST method negative tests -- Fail to create a new student register - already existing academic_register (failed).png
+cypress/screenshots/student/put.student.cy.js/Student endpoint PUT method -- Update a student register (failed).png

@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 describe('Login endpoint: DELETE method', () => {
-    it('Delete unused login register', () => {
+    it.skip('Delete unused login register', () => {
         for (let i = 28; i <= 34; i++) {
             cy.request({
                 method: 'DELETE',

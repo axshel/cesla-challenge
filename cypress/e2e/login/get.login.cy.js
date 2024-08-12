@@ -30,7 +30,7 @@ describe('Login endpoint: GET method', () => {
 
     it('Get a specific login', () => {
 
-        const login_id = 28
+        const login_id = 1
 
         cy.request({
             method: 'GET',
